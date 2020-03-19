@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>nodejs安装及环境变量配置-win10 | Sancx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Nodejs安装及环境变量配置-Win10现在的前端开发已经离不开nodejs，其中的npm（或yarn）包管理工具更是带来很好的开发体验是。本文将简单介绍nodejs的安装及环境变量的配置，方便在更换电脑后重新配置node的查阅。本文适用window 10_  _Nodejs下载及安装  官网下载对应系统安装包 Nodejs最新版下载；  安装时注意修改安装目录，建议放在非C盘目录下，最好不要带">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs安装及环境变量配置-Win10">
+<meta property="og:url" content="https://note.sancx.com/posts/1db87a14.html">
+<meta property="og:site_name" content="Sancx">
+<meta property="og:description" content="Nodejs安装及环境变量配置-Win10现在的前端开发已经离不开nodejs，其中的npm（或yarn）包管理工具更是带来很好的开发体验是。本文将简单介绍nodejs的安装及环境变量的配置，方便在更换电脑后重新配置node的查阅。本文适用window 10_  _Nodejs下载及安装  官网下载对应系统安装包 Nodejs最新版下载；  安装时注意修改安装目录，建议放在非C盘目录下，最好不要带">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173538.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173624.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173706.png">
+<meta property="article:published_time" content="2020-03-19T13:20:42.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:27:13.007Z">
+<meta property="article:author" content="cx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173538.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Sancx" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200320000853.png">
+  <link rel="apple-touch-icon" href="/https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200320000853.png">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="80px" height="80px" alt="Hike News" src="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200320000853.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Nodejs安装及环境变量配置-Win10" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Nodejs安装及环境变量配置-Win10
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/posts/1db87a14.html" class="article-date">
+	  <time datetime="2020-03-19T13:20:42.000Z" itemprop="datePublished">2020-03-19</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Nodejs安装及环境变量配置-Win10"><a href="#Nodejs安装及环境变量配置-Win10" class="headerlink" title="Nodejs安装及环境变量配置-Win10"></a>Nodejs安装及环境变量配置-Win10</h1><p>现在的前端开发已经离不开nodejs，其中的npm（或yarn）包管理工具更是带来很好的开发体验是。本文将简单介绍nodejs的安装及环境变量的配置，方便在更换电脑后重新配置node的查阅。<br><em>本文适用window 10</em><br>_</p>
+<hr>
+<h3 id="Nodejs下载及安装"><a href="#Nodejs下载及安装" class="headerlink" title="_Nodejs下载及安装"></a>_Nodejs下载及安装</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 官网下载对应系统安装包 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Nodejs最新版下载</a>；</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173538.png" alt=""><br>安装时注意修改安装目录，建议放在非C盘目录下，最好不要带有中文的文件夹，一路默认安装即可；</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 安装后检查；</li>
+</ul>
+<p>安装完成后启动命令行工具（CMD），输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>查看安装版本，出现提示版本信息即为安装成功 。<br><img src="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173624.png" alt=""></p>
+<p>说明：这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install 模块名 [-g] 的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。本文是将 &gt; <code>nodejs</code> 安装在 &gt; <code>D:\RuanJian\NodeJS</code> 目录下,以下操作可根据实际安装目录情况进行对应调整。</p>
+<ol>
+<li>在安装目录下，如 <code>D:\RuanJian\NodeJS</code> 新建两个文件夹 <code>node_global</code>(全局包存放目录) 和 <code>node_cache</code>(缓存目录)；</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173706.png" alt=""></p>
+<ol start="2">
+<li>打开命令行工具，执行以下两句操作：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;D:\RuanJian\NodeJS\node_global&quot;</span><br><span class="line">npm config set cache &quot;D:\RuanJian\NodeJS\node_cache&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置环境变量：</li>
+</ol>
+<ul>
+<li><p>打开系统属性-高级-环境变量，在系统变量中新建 变量名：<code>NODE_PATH</code>,变量值：<code>D:\RuanJian\NodeJS\node_global\node_modules</code>;</p>
+<pre><code>![](https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173753.png)</code></pre></li>
+<li><p>编辑用户变量的 <code>path</code>，将默认的 <code>C</code> 盘下 <code>APPData/Roaming\npm</code> 修改为 <code>D:\RuanJian\NodeJS\node_global</code>；</p>
+<pre><code>![](https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200319173824.png)</code></pre></li>
+<li><p>保存即可。</p>
+</li>
+</ul>
+<hr>
+<h2 id="国内备用源：淘宝NPM镜像"><a href="#国内备用源：淘宝NPM镜像" class="headerlink" title="国内备用源：淘宝NPM镜像"></a>国内备用源：淘宝NPM镜像</h2><p>由于国内网络环境限制问题，使用 &gt; <code>npm</code> 安装包时，会遇到时间长，甚至安装失败的问题，建议使用淘宝镜像，具体方法参见官网 &gt; <a href="http://npm.taobao.org/" target="_blank" rel="noopener">淘宝镜像官网</a><br>可使用官方推荐的 <em>cnpm</em> 命令行工具代替默认的 <code>npm</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org&#96;</span><br></pre></td></tr></table></figure>
+
+<p>注意：有时使用 cnpm 安装的路径可能回存在问题，在使用react-native开发应用时会出现问题。此时可以使用nrm切换淘宝源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx nrm use taobao</span><br><span class="line">&#x2F;&#x2F; 以下方式切换回官方源</span><br><span class="line">npx nrm use npm</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>END</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '您的赞赏支是一份支持，同样是我继续创作的动力!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200320004805.png',
+  alipayImage: 'https://cdn.jsdelivr.net/gh/sanocc/PicGoCDN/img/20200320010431.png'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>cx</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/posts/1db87a14.html" target="_blank" title="Nodejs安装及环境变量配置-Win10">https://note.sancx.com/posts/1db87a14.html</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/posts/50e41b64.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          快速安装Wget  -Win10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/posts/84b12bae.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Hexo修改永久链接的默认格式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nodejs安装及环境变量配置-Win10"><span class="nav-number">1.</span> <span class="nav-text">Nodejs安装及环境变量配置-Win10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nodejs下载及安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">_Nodejs下载及安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国内备用源：淘宝NPM镜像"><span class="nav-number">1.1.</span> <span class="nav-text">国内备用源：淘宝NPM镜像</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Sancx All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Sancx
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 cx All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
